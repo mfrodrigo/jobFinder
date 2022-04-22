@@ -1,0 +1,29 @@
+{
+  "name": "jobfinder",
+  "version": "1.0.0",
+  "description": "site for job finder",
+  "main": "app.js",
+  "dependencies": {
+    "sqlite": "^4.0.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mfrodrigo/jobFinder.git"
+  },
+  "keywords": [
+    "dev",
+    "jobs",
+    "dev",
+    "oportunity"
+  ],
+  "author": "Rodrigo Machado Fonseca",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mfrodrigo/jobFinder/issues"
+  },
+  "homepage": "https://github.com/mfrodrigo/jobFinder#readme"
+}
