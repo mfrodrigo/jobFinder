@@ -9,7 +9,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 
-const PORT = 10030;
+const PORT = 10040;
 
 app.listen(PORT, function (){
   console.log(`O Express está rodando na porta ${PORT}.`);
@@ -39,39 +39,45 @@ db.authenticate()
 app.get('/', (req, res) => {
 
   let search = req.query.job;
-  let query = '%' + search + '%';
+  let query  = '%'+search+'%';
 
-  if(!search){
-    Job.findAll({
-      order:[
-        ['createdAt', 'DESC']
-      ]})
-      .then(
-        jobs => {
-          res.render("index", {
-            jobs
-          });
-        }
-      )
+  if(!search) {
+    console.log('Falso')
+    Job.findAll(
+      {
+        order: [
+          ['createdAt', 'DESC']
+        ]
+      }
+    )
+      .then(jobs => {
+
+        res.render('index', {
+          jobs
+        });
+
+      })
       .catch(err => console.log(err));
-  } else{
+  } else {
     Job.findAll({
       where: {title: {[Op.like]: query}},
-      order:[
+      order: [
         ['createdAt', 'DESC']
-      ]})
-      .then(
-        jobs => {
-          res.render("index", {
-            jobs, search
-          });
-        }
-      )
+      ]
+    })
+      .then(jobs => {
+        console.log(jobs)
+        res.render('index', {
+          jobs, search
+        });
+
+      })
       .catch(err => console.log(err));
   }
 
 
 });
+
 
 // jobs routes
 app.use('/jobs', require('./routes/jobs'));
