@@ -9,7 +9,7 @@ const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 
-const PORT = 10025;
+const PORT = 10026;
 
 app.listen(PORT, function (){
   console.log(`O Express está rodando na porta ${PORT}.`);
@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
       .then(
         jobs => {
           res.render("index", {
-            jobs
+            jobs, search
           });
         }
       )
