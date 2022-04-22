@@ -4,8 +4,10 @@ const app = express();
 const path = require('path');
 const db = require('./db/connection');
 const bodyParser = require('body-parser');
+const Job = require('./models/Job');
 
-const PORT = 10301;
+
+const PORT = 10025;
 
 app.listen(PORT, function (){
   console.log(`O Express está rodando na porta ${PORT}.`);
@@ -16,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 // handle bars
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', exphbs.engine({defaultLayout: 'main'}));
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 // static folder
@@ -33,7 +35,7 @@ db.authenticate()
 
 //routes
 app.get('/', (req, res) => {
-  res.send("Está funcionando 2.")
+  res.render("index");
 });
 
 // jobs routes
