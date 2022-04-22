@@ -28,7 +28,7 @@ router.post('/add', (req, res) => {
 
 
 // one job
-router.get('/view/:id', (res, req) => {
+router.get('/view/:id', (req, res) => {
   Job.findOne({
     where: {id: req.params.id}
   })
