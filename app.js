@@ -38,7 +38,7 @@ db.authenticate()
 //routes
 app.get('/', (req, res) => {
 
-  let search = req.body.job;
+  let search = req.query.job;
   let query = '%' + search + '%';
 
   if(!search){
