@@ -1,8 +1,19 @@
 {
-  "name": "jobfinder",
+  "name": "job_finder",
   "version": "1.0.0",
-  "description": "site for job finder",
+  "description": "Este sistema é um portal para programadores encontrarem vagas de trabalho",
   "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "dev",
+    "jobs",
+    "dev",
+    "oportunity"
+  ],
+  "author": "Matheus <matheusbudkewiczbattisti@gmail.com> (http://www.horadecodar.com.br/)",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
@@ -11,25 +22,6 @@
     "sqlite3": "^4.1.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
-  },
-  "scripts": {
-    "dev": "nodemon app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mfrodrigo/jobFinder.git"
-  },
-  "keywords": [
-    "dev",
-    "jobs",
-    "dev",
-    "oportunity"
-  ],
-  "author": "Rodrigo Machado Fonseca",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/mfrodrigo/jobFinder/issues"
-  },
-  "homepage": "https://github.com/mfrodrigo/jobFinder#readme"
+    "nodemon": "^2.0.2"
+  }
 }
