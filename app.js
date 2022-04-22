@@ -5,7 +5,7 @@ const path = require('path');
 const db = require('./db/connection');
 const bodyParser = require('body-parser');
 
-const PORT = 8000;
+const PORT = 10301;
 
 app.listen(PORT, function (){
   console.log(`O Express está rodando na porta ${PORT}.`);
