@@ -26,4 +26,18 @@ router.post('/add', (req, res) => {
 
 });
 
+
+// one job
+router.get('/view/:id', (res, req) => {
+  Job.findOne({
+    where: {id: req.params.id}
+  })
+    .then(job => {
+      res.render('view', {
+        job
+      });
+    }).catch(err => console.log(err));
+
+});
+
 module.exports = router
